@@ -8,3 +8,8 @@ provider "ibm" {
 module "vpc" {
   source = "./vpc"
 }
+
+module "dns" {
+  source = "./dns"
+  vpc_id = module.vpc.vpc_id
+}
